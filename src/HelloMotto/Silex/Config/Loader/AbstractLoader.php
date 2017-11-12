@@ -91,6 +91,10 @@ abstract class AbstractLoader
                 }
                 unset($configArray[$key]);
             }
+
+            if (isset($configArray[$key])){
+                $configArray[$key] = array_merge($configArray[$key], $value);
+            }            
         }
         return $configArray;
     }
